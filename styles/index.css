@@ -1,0 +1,169 @@
+@charset "UTF-8";
+
+body {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color : black;
+    min-height: 100vh;
+}
+
+.logo {
+    max-width: 20%;
+    border-radius: 10px;
+}
+
+/* ----- header --------------------------------------------------------- header ----- */
+
+header {
+    text-align : center;
+    background-color: #b3afaf;
+    max-height: 4rem;
+    border-radius: 0 0 15px 15px;
+    margin : 0 0 1rem 0;
+}
+
+.hh1 {
+    font-size: 1.4rem;
+}
+
+/* ----- header --------------------------------------------------------- header ----- */
+
+/* ----- main --------------------------------------------------------- main ----- */
+
+main {
+    flex : 1;
+    margin: 4rem 0 0 0;
+}
+
+.ecran {
+    background-color: rgb(255, 255, 255);
+    text-align: right;
+    border-radius: 20px;
+    margin: 0 0 1rem 0;
+}
+
+.ecran h2 {
+    font-size: 3rem;
+    margin-right: 1rem;
+}
+
+.clavier {
+    background-color: #aca8a8;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap : 10px;
+    padding: 0.5rem;
+}
+
+.clavier button {
+    min-height: 6rem;
+    font-size: 2rem;
+    border: bold;
+    border-radius: 30px;
+    color : black;
+}
+
+.btnnb {
+    
+}
+
+.btnop {
+    background-color: #b3b4b4;
+}
+
+.btnctrl {
+    background-color: #929090;
+}
+
+.btnreset {
+    background-color: #e4e0e0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----- main --------------------------------------------------------- main ----- */
+
+/* ----- footer --------------------------------------------------------- footer ----- */
+
+footer {
+    background-color: #b3afaf;
+    border-radius: 20px 20px 0 0;
+}
+
+.footer {
+    text-align: right;
+    padding : 10px;
+}
+
+
+/* ----- footer --------------------------------------------------------- footer ----- */
+
+
+@media (min-width : 769px) {
+    
+    .logo {
+    max-width: 8%;
+}
+    /* ----- header --------------------------------------------------------- header ----- */
+
+    header {
+    max-height: 5.5rem;
+    }
+
+    .hh1 {
+    font-size: 2rem;
+    }
+
+    /* ----- header --------------------------------------------------------- header ----- */
+
+    /* ----- main --------------------------------------------------------- main ----- */
+
+    main {
+        margin : 1rem 0 3rem 0;
+        padding: 0 20%;
+    }
+    .global {
+        
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+    }
+
+    .ecran h2 {
+    font-size: 3rem;
+    margin-right: 1rem;
+    }
+
+    .clavier {
+        padding: 1rem;
+    }
+
+    .clavier button {
+    min-height: 4rem;
+    border-radius: 20px;
+    }
+
+    /* ----- main --------------------------------------------------------- main ----- */
+
+    /* ----- main --------------------------------------------------------- main ----- */
+
+    /* ----- footer --------------------------------------------------------- footer ----- */
+
+    /* ----- footer --------------------------------------------------------- footer ----- */
+
+}
