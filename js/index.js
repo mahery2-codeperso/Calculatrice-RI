@@ -3,6 +3,8 @@ const boutonop = document.querySelectorAll(".btnop");
 const boutonctrl = document.querySelector(".btnctrl");
 const boutonreset = document.querySelector(".btnreset");
 const ecran = document.querySelector(".ecran h2");
+const ecranjuste = document.querySelector(".ecran");
+const hbg = document.querySelector(".hbg"); 
 
 boutonnb.forEach(b => {
     b.addEventListener("pointerdown", (event) => {
@@ -43,4 +45,66 @@ boutonctrl.addEventListener("pointerdown", () => {
 
 boutonreset.addEventListener("pointerdown", () => {
     ecran.textContent = "0";
+})
+
+let ld = 1;
+hbg.addEventListener("pointerdown", () => {
+    ld++;
+
+    hbg.textContent = ld%2 === 0
+    ? "Sombre" 
+    : "Clair" 
+    document.body.style.backgroundColor = ld%2 === 0
+    ? "#1f1d1d" 
+    : "white" 
+    ecran.style.backgroundColor = ld%2 === 0
+    ? "#1f1d1d" 
+    : "white"
+    ecranjuste.style.backgroundColor = ld%2 === 0
+    ? "#1f1d1d" 
+    : "white"
+
+    document.body.style.color = ld%2 === 1
+    ? "#1f1d1d" 
+    : "white"
+
+
+
+    // ----- bouton num ----------------------------------------------------- bouton num -----
+    boutonnb.forEach(b => {
+        b.style.backgroundColor = ld%2 === 0
+    ? "#1f1d1d" 
+    : "#cfcfcf"
+
+        b.style.color = ld%2 === 1
+            ? "#1f1d1d" 
+            : "white" 
+    })
+
+    // ----- bouton operateur ----------------------------------------------------- bouton operateur -----
+    boutonop.forEach(b => {
+        b.style.backgroundColor = ld%2 === 0
+            ? "#1f1d1d" 
+            : "#b3b4b4"
+
+        b.style.color = ld%2 === 1
+            ? "#1f1d1d" 
+            : "white" 
+    })
+
+    // ----- bouton ctrl ----------------------------------------------------- bouton ctrl -----
+    boutonctrl.style.backgroundColor = ld%2 === 0
+        ? "#1f1d1d" 
+        : "#929090"
+    boutonctrl.style.color = ld%2 === 1
+        ? "#1f1d1d" 
+        : "white" 
+
+    // ----- bouton reset ----------------------------------------------------- bouton reset -----
+    boutonreset.style.backgroundColor = ld%2 === 0
+        ? "#1f1d1d" 
+        : "#e4e0e0"
+    boutonreset.style.color = ld%2 === 1
+        ? "#1f1d1d" 
+        : "white" 
 })

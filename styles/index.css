@@ -7,6 +7,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color : black;
     min-height: 100vh;
+    transition: all 0.235s ease;
 }
 
 .logo {
@@ -14,18 +15,41 @@ body {
     border-radius: 10px;
 }
 
+.logo:hover {
+    box-shadow: 0 0 10px white;
+}
+
+button {
+    border : none;
+    transition: all 0.235s ease;
+}
+
 /* ----- header --------------------------------------------------------- header ----- */
 
 header {
-    text-align : center;
     background-color: #b3afaf;
     max-height: 4rem;
     border-radius: 0 0 15px 15px;
     margin : 0 0 1rem 0;
+    color : black;
 }
 
 .hh1 {
     font-size: 1.4rem;
+}
+
+.hdiv {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0.5rem;
+}
+
+.hbg {
+    font-size: 0.7rem;
+    margin: 0.25rem 0 0 0;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
 }
 
 /* ----- header --------------------------------------------------------- header ----- */
@@ -35,6 +59,7 @@ header {
 main {
     flex : 1;
     margin: 4rem 0 0 0;
+    transition: all 0.235s ease;
 }
 
 .ecran {
@@ -42,11 +67,13 @@ main {
     text-align: right;
     border-radius: 20px;
     margin: 0 0 1rem 0;
+    transition: all 0.235s ease;
 }
 
 .ecran h2 {
     font-size: 3rem;
     margin-right: 1rem;
+    transition: all 0.235s ease;
 }
 
 .clavier {
@@ -67,7 +94,7 @@ main {
 }
 
 .btnnb {
-    
+    background-color: #cfcfcf;
 }
 
 .btnop {
@@ -129,6 +156,13 @@ footer {
     font-size: 2rem;
     }
 
+    .hbg {
+    margin: 0.5rem 0 0 0;
+    width: 4rem;
+    height: 4rem;
+    font-size: 0.9rem;
+}
+
     /* ----- header --------------------------------------------------------- header ----- */
 
     /* ----- main --------------------------------------------------------- main ----- */
@@ -165,5 +199,6 @@ footer {
     /* ----- footer --------------------------------------------------------- footer ----- */
 
     /* ----- footer --------------------------------------------------------- footer ----- */
+
 
 }
