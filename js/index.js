@@ -5,7 +5,11 @@ const boutonreset = document.querySelector(".btnreset");
 const ecran = document.querySelector(".ecran h2");
 const ecranjuste = document.querySelector(".ecran");
 const hbg = document.querySelector(".hbg"); 
+let num1 = "";
+let operateur = "";
+let num2 = "";
 
+// Pour les boutons de 0 à 9
 boutonnb.forEach(b => {
     b.addEventListener("pointerdown", (event) => {
         const valbuton = event.target.textContent;
@@ -19,17 +23,47 @@ boutonnb.forEach(b => {
         else {
             ecran.textContent += valbuton;
         }
+
+        if (operateur === "")
+        {
+            num1 += valbouton;
+            ecran.textContent = num1;
+        }
+        
+        else{
+            num2 += valbouton;
+            ecran.textContent = num2;
+        }
+    })
+})
+
+// Pour les boutons opérateurs
+boutonop.forEach(b => {
+    b.addEventListener("pointerdown", (event) =>{
+        const valbuton = event.target.textContent;
+        
+        if (valbuton === "=")
+        {
+            ecran.textContent = calculer(ecran.textContent);
+        }
+        else {
+            if (ecran.textContent === "" && valbouton !== "-") {
+                ecran.textContent = "0" + valbouton;
+            }
+            if (ecran.textContent === "0" || ecran.textContent === "Erreur")
+            {
+                ecran.textContent = valbuton;
+            }
+            else{
+                ecran.textContent += valbuton;
+            }
+        }
         
     })
 })
 
-boutonop.forEach(b => {
-    b.addEventListener("pointerdown", (event) =>{
-        const valbuton =  event.target.textContent;
-        ecran.textContent += valbuton;
-    })
-})
 
+// Pour le bouton qui efface le dernier caractère
 boutonctrl.addEventListener("pointerdown", () => {
     const textActuel  = ecran.textContent;
 
@@ -43,10 +77,12 @@ boutonctrl.addEventListener("pointerdown", () => {
     }
 })
 
+// Pour le bouton reset
 boutonreset.addEventListener("pointerdown", () => {
     ecran.textContent = "0";
 })
 
+// Pour changer de thème
 let ld = 1;
 hbg.addEventListener("pointerdown", () => {
     ld++;
@@ -108,3 +144,21 @@ hbg.addEventListener("pointerdown", () => {
         ? "#1f1d1d" 
         : "white" 
 })
+
+
+/// ----- Fonction ------------------------------------------------------------------------------------------------------- Fonction -----
+
+function calculer(text) {
+    try {
+
+        // Là le replace() sert à rechercher le caractère qui est en premier paramètre "x", et on remplace par le deuxième paramètre "*"
+        // n.replace( (ce qu'on recherche) g("global" pour tous les caratères) , "(par ce qu'on va remplacer)" )
+        let texte = text.replace(/x/g, "*");
+
+        const resultat = Function(`'use strict'; return (${texte})`) ();
+        return resultat !== undefined ? resultat : "0";
+    }
+    catch (erreur) {
+        return "Erreur";
+    }
+}
